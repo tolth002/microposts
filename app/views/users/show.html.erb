@@ -1,4 +1,24 @@
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<h1>Profile</h1> 
+
+  <h1><%= gravatar_for @user %></h1>
+  
+<div class="profile-body">
+  
+<form class="form-horizontal">
+   <div class="form-group">
+    名前: <%= @user.name %>
+   </div>
+  
+   <div class="form-group">
+    メールアドレス: <%= @user.email %>
+   </div>
+   
+  <div class="form-group">
+     <%= link_to "edit", edit_user_path, class: "btn btn-primary" %>
+  </div>
+      
+</form>  
+  
+</div> 
+
+
