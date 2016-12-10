@@ -50,8 +50,8 @@ class UsersController < ApplicationController
 
  def correct_user
    @user = User.find(params[:id])
-   flash[:danger] = "正しいアカウントでログインしてください."
-   redirect_to(login_url) unless @user == current_user
+   redirect_to login_url unless @user == current_user
+   
  end
  
 end
