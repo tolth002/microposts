@@ -2,23 +2,23 @@
 
   <h1><%= gravatar_for @user %></h1>
   
-<div class="profile-body">
-  
-<form class="form-horizontal">
-   <div class="form-group">
-    名前: <%= @user.name %>
-   </div>
-  
-   <div class="form-group">
-    メールアドレス: <%= @user.email %>
-   </div>
-   
-  <div class="form-group">
-     <%= link_to "edit", edit_user_path, class: "btn btn-primary" %>
-  </div>
-      
-</form>  
-  
-</div> 
 
+    <%= form_for(@user, html: {class:"form-horizontal"})  do |f| %>
+
+　　　<div calss="form-group">
+       <%= f.label :name %>
+       <%= @user.name %>
+      </div>
+
+     <div calss="form-group">
+      <%= f.label :email %>
+      <%= @user.email %>
+     </div>
+     
+    <div calss="form-group">
+      <%= link_to "プロフィールを変更する", edit_user_path, class: "btn btn-primary" %>
+     </div>
+     
+    <% end %>
+  
 
